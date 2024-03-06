@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Push-Up Counter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .pushup-counter .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pushup-counter">
+        <!-- Push Up Counter Button -->
+        <button id="pushUpButton" class="btn">Activate Push Up Counter</button>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pushUpButton = document.getElementById("pushUpButton");
+
+            let counter = 0;
+
+            pushUpButton.addEventListener("click", function() {
+                counter++;
+                updateButtonText();
+            });
+
+            function updateButtonText() {
+                pushUpButton.textContent = `Push Up Counter: ${counter}`;
+            }
+        });
+    </script>
+</body>
+</html>
